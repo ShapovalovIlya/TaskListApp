@@ -9,57 +9,62 @@ import SwiftUI
 
 struct MainMenuView: View {
     
-    //MARK: - Private properties
-    @State private var username: String = ""
-    @State private var password: String = ""
-    @State private var tagSelection: String? = nil
+    
+    private let K = Constants()
+    @StateObject private var viewModel = MainMenuVM()
     
     var body: some View {
         NavigationView {
             VStack(alignment: .center, spacing: 10) {
-                //Navigation Link
-                NavigationLink(destination: TaskListView(), tag: "TaskList", selection: $tagSelection)
+                //Navigation Links
+                NavigationLink(destination: TaskListView(), tag: K.taskListTag, selection: $viewModel.tagSelection)
                 { EmptyView() }
-                NavigationLink(destination: RegistrationView(), tag: "Registration", selection: $tagSelection)
+                NavigationLink(destination: RegistrationView(), tag: K.registrationTag, selection: $viewModel.tagSelection)
                 { EmptyView() }
                 
                 Spacer()
-                Text("Welcome \(username)!")
+                Text("Welcome \(viewModel.username)!")
+                    .bold()
                 
-                Spacer()
-                
-                    TextField("Login", text: $username)
-                        .frame(height: 40)
+                TextField("Login", text: $viewModel.username)
+                        .frame(height: 50)
                     
-                    TextField("Password", text: $password)
-                        .frame(height: 40)
+                SecureField("Password", text: $viewModel.password)
+                        .frame(height: 50)
+                
+                Spacer()
             
                 Button {
-                    tagSelection = "TaskList"
+                    viewModel.tagSelection = K.taskListTag
                 } label: {
                     Text("Login")
                 }
-                .frame(width: 200, height: 40, alignment: .center)
+                .frame(width: UIScreen.main.bounds.width / 1.5,
+                       height: UIScreen.main.bounds.height / 12,
+                       alignment: .center)
                 .background(Color.blue)
                 .foregroundColor(Color.white)
                 .cornerRadius(10)
                 .shadow(color: .gray, radius: 1, x: 1, y: 1)
                 
                 Button {
-                    tagSelection = "Registration"
+                    viewModel.tagSelection = K.registrationTag
                 } label: {
                     Text("Registration")
                 }
-                .frame(width: 200, height: 40, alignment: .center)
+                .frame(width: UIScreen.main.bounds.width / 1.5,
+                       height: UIScreen.main.bounds.height / 12,
+                       alignment: .center)
                 .background(Color.blue)
                 .foregroundColor(Color.white)
                 .cornerRadius(10)
                 .shadow(color: .gray, radius: 1, x: 1, y: 1)
                 
-               Spacer()
+                Spacer()
             }
             .textFieldStyle(RoundedBorderTextFieldStyle())
-            .frame(width: 200, alignment: .center)
+            .frame(width: UIScreen.main.bounds.width / 1.5,
+                   alignment: .center)
         }
     }
 }

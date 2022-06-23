@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct RegistrationView: View {
-    //MARK: - private properties
-    @State private var username: String = ""
-    @State private var password: String = ""
+    
+    @StateObject private var viewModel = RegistrationVM()
     
     var body: some View {
         VStack {
@@ -18,15 +17,16 @@ struct RegistrationView: View {
             Spacer()
             
             Text("RegistrationView")
+                .bold()
             
-            TextField("Login", text: $username)
-                .frame(height: 40)
+            TextField("Login", text: $viewModel.username)
+                .frame(height: 50)
             
-            TextField("Password", text: $password)
-                .frame(height: 40)
+            SecureField("Password", text: $viewModel.password)
+                .frame(height: 50)
             
-            TextField("Confirm password", text: $password)
-                .frame(height: 40)
+            SecureField("Confirm password", text: $viewModel.confirmPassword)
+                .frame(height: 50)
             
             Spacer()
             
@@ -35,7 +35,9 @@ struct RegistrationView: View {
             } label: {
                 Text("Registration")
             }
-            .frame(width: 200, height: 40, alignment: .center)
+            .frame(width: UIScreen.main.bounds.width / 1.5,
+                   height: UIScreen.main.bounds.height / 12,
+                   alignment: .center)
             .background(Color.blue)
             .foregroundColor(Color.white)
             .cornerRadius(10)
@@ -45,7 +47,8 @@ struct RegistrationView: View {
             
         }
         .textFieldStyle(RoundedBorderTextFieldStyle())
-        .frame(width: 200, alignment: .center)
+        .frame(width: UIScreen.main.bounds.width / 1.5,
+               alignment: .center)
     }
 }
 

@@ -1,0 +1,1333 @@
+{
+	"info": {
+		"_postman_id": "a406d448-51ec-4ebe-9075-89083341dbc8",
+		"name": "test_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19837539"
+	},
+	"item": [
+		{
+			"name": "accounts",
+			"item": [
+				{
+					"name": "login/register",
+					"item": [
+						{
+							"name": "registration",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"password\": \"qwerty123456\",\n    \"username\": \"test-user\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "dev1.itpw.ru:8013/accounts/authentication/reg/",
+									"host": [
+										"dev1",
+										"itpw",
+										"ru"
+									],
+									"port": "8013",
+									"path": [
+										"accounts",
+										"authentication",
+										"reg",
+										""
+									]
+								},
+								"description": "Простой пост запрос, в боди которого отправляется логин и пароль, ответ всегда в виде detail(смотри пример), при 201 - регистрация успешна.  \nРегистрация не авторизирует пользователя сама"
+							},
+							"response": [
+								{
+									"name": "user already exists",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"password\": \"qwerty123456\",\n    \"username\": \"test-user\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "dev1.itpw.ru:8013/accounts/authentication/reg/",
+											"host": [
+												"dev1",
+												"itpw",
+												"ru"
+											],
+											"port": "8013",
+											"path": [
+												"accounts",
+												"authentication",
+												"reg",
+												""
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Wed, 22 Jun 2022 11:07:17 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "WSGIServer/0.2 CPython/3.8.13"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept, Origin"
+										},
+										{
+											"key": "Allow",
+											"value": "POST, OPTIONS"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Length",
+											"value": "141"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"detail\": \"Пользователь с такими учетными данными уже зарегистрирован в системе\"\n}"
+								},
+								{
+									"name": "success registration",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"password\": \"megaTester\",\n    \"username\": \"123456\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "dev1.itpw.ru:8013/accounts/authentication/reg/",
+											"host": [
+												"dev1",
+												"itpw",
+												"ru"
+											],
+											"port": "8013",
+											"path": [
+												"accounts",
+												"authentication",
+												"reg",
+												""
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Wed, 22 Jun 2022 11:07:46 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "WSGIServer/0.2 CPython/3.8.13"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept, Origin"
+										},
+										{
+											"key": "Allow",
+											"value": "POST, OPTIONS"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Length",
+											"value": "68"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"detail\": \"Пользователь зарегистрирован\"\n}"
+								}
+							]
+						},
+						{
+							"name": "authentication",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"password\": \"qwerty123456\",\n    \"username\": \"test-user\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "dev1.itpw.ru:8013/accounts/authentication/auth/",
+									"host": [
+										"dev1",
+										"itpw",
+										"ru"
+									],
+									"port": "8013",
+									"path": [
+										"accounts",
+										"authentication",
+										"auth",
+										""
+									]
+								},
+								"description": "Авторизация, при успехе - приходит модель с токеном, который нужно использовать для всех остальных запросов и модель пользователя, которую сразу можно отобразить, если надо.  \nПри неудаче - придет detail"
+							},
+							"response": [
+								{
+									"name": "success auth",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"password\": \"qwerty123456\",\n    \"username\": \"test-user\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "dev1.itpw.ru:8013/accounts/authentication/auth/",
+											"host": [
+												"dev1",
+												"itpw",
+												"ru"
+											],
+											"port": "8013",
+											"path": [
+												"accounts",
+												"authentication",
+												"auth",
+												""
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Wed, 22 Jun 2022 11:09:17 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "WSGIServer/0.2 CPython/3.8.13"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept, Origin"
+										},
+										{
+											"key": "Allow",
+											"value": "POST, OPTIONS"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Length",
+											"value": "306"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiNjBlZGQ1ZjctMDQ1NC00OTc3LTg5NGEtZGMwNjIwMTM4ZGE1IiwidXNlcm5hbWUiOiJ0ZXN0LXVzZXIiLCJleHAiOjE2NTU4OTY0NTd9.BYtqvX547GEGC3YSBMUqCq2XIO95t3NhbJwvKVNXO7w\",\n    \"user\": {\n        \"username\": \"test-user\",\n        \"id\": \"60edd5f7-0454-4977-894a-dc0620138da5\",\n        \"is_active\": true\n    }\n}"
+								},
+								{
+									"name": "error auth",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"password\": \"qwerty123456\",\n    \"username\": \"test-use\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "dev1.itpw.ru:8013/accounts/authentication/auth/",
+											"host": [
+												"dev1",
+												"itpw",
+												"ru"
+											],
+											"port": "8013",
+											"path": [
+												"accounts",
+												"authentication",
+												"auth",
+												""
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Wed, 22 Jun 2022 11:13:51 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "WSGIServer/0.2 CPython/3.8.13"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept, Origin"
+										},
+										{
+											"key": "Allow",
+											"value": "POST, OPTIONS"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Length",
+											"value": "60"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"detail\": \"Неверный логин или пароль\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "dev1.itpw.ru:8013/accounts/profile/my_profile/",
+							"host": [
+								"dev1",
+								"itpw",
+								"ru"
+							],
+							"port": "8013",
+							"path": [
+								"accounts",
+								"profile",
+								"my_profile",
+								""
+							]
+						},
+						"description": "Модель пользователя с никнеймом, айди и полем активный ли аккаунт.  \nПользователь определяется по токену в autharization"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "lists",
+			"item": [
+				{
+					"name": "lists",
+					"item": [
+						{
+							"name": "create_list",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"my_second_list\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "dev1.itpw.ru:8013/todo/lists/",
+									"host": [
+										"dev1",
+										"itpw",
+										"ru"
+									],
+									"port": "8013",
+									"path": [
+										"todo",
+										"lists",
+										""
+									]
+								},
+								"description": "Создание нового списка с определенным названием.  \nВ модели есть айди списка, завершены ли все задачи в списке, процентная завершенность задач в списке и его имя"
+							},
+							"response": [
+								{
+									"name": "create_list",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"my_second_list\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "dev1.itpw.ru:8013/todo/lists/",
+											"host": [
+												"dev1",
+												"itpw",
+												"ru"
+											],
+											"port": "8013",
+											"path": [
+												"todo",
+												"lists",
+												""
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Wed, 22 Jun 2022 11:15:20 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "WSGIServer/0.2 CPython/3.8.13"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept, Origin"
+										},
+										{
+											"key": "Allow",
+											"value": "GET, POST, HEAD, OPTIONS"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Length",
+											"value": "76"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 503,\n    \"completed\": false,\n    \"completion_progress\": 0,\n    \"name\": \"my_second_list\"\n}"
+								}
+							]
+						},
+						{
+							"name": "update_list",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"my_updated_list\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "dev1.itpw.ru:8013/todo/lists/5042/",
+									"host": [
+										"dev1",
+										"itpw",
+										"ru"
+									],
+									"port": "8013",
+									"path": [
+										"todo",
+										"lists",
+										"5042",
+										""
+									]
+								},
+								"description": "В юрле через / указываем айди списка, который хотим изменить и отправляем в боди новое название, в ответе получим либо новую модель списка, либо при не правильном айди - 404 код и detail"
+							},
+							"response": [
+								{
+									"name": "update_list",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"my_updated_list\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "dev1.itpw.ru:8013/todo/lists/504/",
+											"host": [
+												"dev1",
+												"itpw",
+												"ru"
+											],
+											"port": "8013",
+											"path": [
+												"todo",
+												"lists",
+												"504",
+												""
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Wed, 22 Jun 2022 11:16:44 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "WSGIServer/0.2 CPython/3.8.13"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept, Origin"
+										},
+										{
+											"key": "Allow",
+											"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Length",
+											"value": "77"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 504,\n    \"completed\": false,\n    \"completion_progress\": 0,\n    \"name\": \"my_updated_list\"\n}"
+								}
+							]
+						},
+						{
+							"name": "list_lists",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "dev1.itpw.ru:8013/todo/lists/",
+									"host": [
+										"dev1",
+										"itpw",
+										"ru"
+									],
+									"port": "8013",
+									"path": [
+										"todo",
+										"lists",
+										""
+									]
+								},
+								"description": "список списков у пользователя по токену, просто массив без пагинации"
+							},
+							"response": [
+								{
+									"name": "list_lists",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "dev1.itpw.ru:8013/todo/lists/",
+											"host": [
+												"dev1",
+												"itpw",
+												"ru"
+											],
+											"port": "8013",
+											"path": [
+												"todo",
+												"lists",
+												""
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Wed, 22 Jun 2022 11:18:06 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "WSGIServer/0.2 CPython/3.8.13"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept, Origin"
+										},
+										{
+											"key": "Allow",
+											"value": "GET, POST, HEAD, OPTIONS"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Length",
+											"value": "548"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"id\": 440,\n        \"completed\": true,\n        \"completion_progress\": 100,\n        \"name\": \"mymy_favorite_task\"\n    },\n    {\n        \"id\": 441,\n        \"completed\": false,\n        \"completion_progress\": 50,\n        \"name\": \"my_six_task\"\n    },\n    {\n        \"id\": 456,\n        \"completed\": true,\n        \"completion_progress\": 100,\n        \"name\": \"task_5\"\n    },\n    {\n        \"id\": 463,\n        \"completed\": true,\n        \"completion_progress\": 100,\n        \"name\": \"my_second_list\"\n    },\n    {\n        \"id\": 487,\n        \"completed\": false,\n        \"completion_progress\": 0,\n        \"name\": \"New categoryfdfd\"\n    },\n    {\n        \"id\": 503,\n        \"completed\": false,\n        \"completion_progress\": 0,\n        \"name\": \"my_second_list\"\n    },\n    {\n        \"id\": 504,\n        \"completed\": false,\n        \"completion_progress\": 0,\n        \"name\": \"my_updated_list\"\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "delete_list",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "dev1.itpw.ru:8013/todo/lists/440/",
+									"host": [
+										"dev1",
+										"itpw",
+										"ru"
+									],
+									"port": "8013",
+									"path": [
+										"todo",
+										"lists",
+										"440",
+										""
+									]
+								},
+								"description": "удаление списка через айди в юрле, при удаче вернется пустой контент в ответе с 204 кодом, если нет такого айди - будет 404 с detail"
+							},
+							"response": [
+								{
+									"name": "delete_list",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "dev1.itpw.ru:8013/todo/lists/440/",
+											"host": [
+												"dev1",
+												"itpw",
+												"ru"
+											],
+											"port": "8013",
+											"path": [
+												"todo",
+												"lists",
+												"440",
+												""
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Wed, 22 Jun 2022 11:18:52 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "WSGIServer/0.2 CPython/3.8.13"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept, Origin"
+										},
+										{
+											"key": "Allow",
+											"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Length",
+											"value": "0"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										}
+									],
+									"cookie": [],
+									"body": null
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "tasks",
+					"item": [
+						{
+							"name": "create_task",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"todo_list\": 504,\n    \"name\": \"my second task\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "dev1.itpw.ru:8013/todo/tasks/",
+									"host": [
+										"dev1",
+										"itpw",
+										"ru"
+									],
+									"port": "8013",
+									"path": [
+										"todo",
+										"tasks",
+										""
+									]
+								},
+								"description": "создание задачи в определенном списке, отправляется просто название задачи и айди списка в боди поста"
+							},
+							"response": [
+								{
+									"name": "create_task",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"todo_list\": 504,\n    \"name\": \"my second task\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "dev1.itpw.ru:8013/todo/tasks/",
+											"host": [
+												"dev1",
+												"itpw",
+												"ru"
+											],
+											"port": "8013",
+											"path": [
+												"todo",
+												"tasks",
+												""
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Wed, 22 Jun 2022 11:20:14 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "WSGIServer/0.2 CPython/3.8.13"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept, Origin"
+										},
+										{
+											"key": "Allow",
+											"value": "GET, POST, HEAD, OPTIONS"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Length",
+											"value": "99"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 444,\n    \"_todo_list\": \"my_updated_list\",\n    \"completed\": false,\n    \"name\": \"my second task\",\n    \"todo_list\": 504\n}"
+								}
+							]
+						},
+						{
+							"name": "update_task",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"todo_list\": 504,\n    \"name\": \"my first updated task\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "dev1.itpw.ru:8013/todo/tasks/444/",
+									"host": [
+										"dev1",
+										"itpw",
+										"ru"
+									],
+									"port": "8013",
+									"path": [
+										"todo",
+										"tasks",
+										"444",
+										""
+									]
+								},
+								"description": "изменение названия конкретной задачи по ее айди в юрле"
+							},
+							"response": [
+								{
+									"name": "update_task",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"todo_list\": 504,\n    \"name\": \"my first updated task\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "dev1.itpw.ru:8013/todo/tasks/444/",
+											"host": [
+												"dev1",
+												"itpw",
+												"ru"
+											],
+											"port": "8013",
+											"path": [
+												"todo",
+												"tasks",
+												"444",
+												""
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Wed, 22 Jun 2022 11:21:59 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "WSGIServer/0.2 CPython/3.8.13"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept, Origin"
+										},
+										{
+											"key": "Allow",
+											"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Length",
+											"value": "106"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 444,\n    \"_todo_list\": \"my_updated_list\",\n    \"completed\": false,\n    \"name\": \"my first updated task\",\n    \"todo_list\": 504\n}"
+								}
+							]
+						},
+						{
+							"name": "list_tasks",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "dev1.itpw.ru:8013/todo/tasks/?todo_list=441",
+									"host": [
+										"dev1",
+										"itpw",
+										"ru"
+									],
+									"port": "8013",
+									"path": [
+										"todo",
+										"tasks",
+										""
+									],
+									"query": [
+										{
+											"key": "todo_list",
+											"value": "441"
+										}
+									]
+								},
+								"description": "Список задач пользователя по определенному списку"
+							},
+							"response": [
+								{
+									"name": "list_tasks",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "dev1.itpw.ru:8013/todo/tasks/?todo_list=441",
+											"host": [
+												"dev1",
+												"itpw",
+												"ru"
+											],
+											"port": "8013",
+											"path": [
+												"todo",
+												"tasks",
+												""
+											],
+											"query": [
+												{
+													"key": "todo_list",
+													"value": "441"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Wed, 22 Jun 2022 11:22:33 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "WSGIServer/0.2 CPython/3.8.13"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept, Origin"
+										},
+										{
+											"key": "Allow",
+											"value": "GET, POST, HEAD, OPTIONS"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Length",
+											"value": "362"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"id\": 421,\n        \"_todo_list\": \"my_six_task\",\n        \"completed\": true,\n        \"name\": \"new task233\",\n        \"todo_list\": 441\n    },\n    {\n        \"id\": 426,\n        \"_todo_list\": \"my_six_task\",\n        \"completed\": false,\n        \"name\": \"new task\",\n        \"todo_list\": 441\n    },\n    {\n        \"id\": 427,\n        \"_todo_list\": \"my_six_task\",\n        \"completed\": false,\n        \"name\": \"new task\",\n        \"todo_list\": 441\n    },\n    {\n        \"id\": 433,\n        \"_todo_list\": \"my_six_task\",\n        \"completed\": true,\n        \"name\": \"new task\",\n        \"todo_list\": 441\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "delete_task",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "dev1.itpw.ru:8013/todo/tasks/427/",
+									"host": [
+										"dev1",
+										"itpw",
+										"ru"
+									],
+									"port": "8013",
+									"path": [
+										"todo",
+										"tasks",
+										"427",
+										""
+									]
+								},
+								"description": "Удаление задачи по айди"
+							},
+							"response": [
+								{
+									"name": "delete_task",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "dev1.itpw.ru:8013/todo/tasks/427/",
+											"host": [
+												"dev1",
+												"itpw",
+												"ru"
+											],
+											"port": "8013",
+											"path": [
+												"todo",
+												"tasks",
+												"427",
+												""
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Wed, 22 Jun 2022 11:23:37 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "WSGIServer/0.2 CPython/3.8.13"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept, Origin"
+										},
+										{
+											"key": "Allow",
+											"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Length",
+											"value": "0"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										}
+									],
+									"cookie": [],
+									"body": null
+								}
+							]
+						},
+						{
+							"name": "complete_task",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "dev1.itpw.ru:8013/todo/tasks/complete/2/",
+									"host": [
+										"dev1",
+										"itpw",
+										"ru"
+									],
+									"port": "8013",
+									"path": [
+										"todo",
+										"tasks",
+										"complete",
+										"2",
+										""
+									]
+								},
+								"description": "по айди задачи завершаем ее и получаем detail"
+							},
+							"response": [
+								{
+									"name": "complete_task",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "dev1.itpw.ru:8013/todo/tasks/complete/426/",
+											"host": [
+												"dev1",
+												"itpw",
+												"ru"
+											],
+											"port": "8013",
+											"path": [
+												"todo",
+												"tasks",
+												"complete",
+												"426",
+												""
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Wed, 22 Jun 2022 11:24:23 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "WSGIServer/0.2 CPython/3.8.13"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept, Origin"
+										},
+										{
+											"key": "Allow",
+											"value": "POST, OPTIONS"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Length",
+											"value": "44"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"detail\": \"Задача завершена\"\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiNjBlZGQ1ZjctMDQ1NC00OTc3LTg5NGEtZGMwNjIwMTM4ZGE1IiwidXNlcm5hbWUiOiJ0ZXN0LXVzZXIiLCJleHAiOjE2MzQ4MTI2NjN9.rpEOG8kHqNZoAhDUvFhfU329FpCZV7DMSAYzRVvprDA",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

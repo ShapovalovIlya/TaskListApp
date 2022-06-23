@@ -11,13 +11,18 @@
 		865541E1286354710096B746 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865541E0286354710096B746 /* MainMenuView.swift */; };
 		865541E3286354730096B746 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 865541E2286354730096B746 /* Assets.xcassets */; };
 		865541E6286354730096B746 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 865541E5286354730096B746 /* Preview Assets.xcassets */; };
-		865541EE2863552A0096B746 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865541ED2863552A0096B746 /* NetworkService.swift */; };
-		865541F0286355D50096B746 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865541EF286355D50096B746 /* NetworkDataFetcher.swift */; };
 		865541F228635B5F0096B746 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865541F128635B5F0096B746 /* Constants.swift */; };
 		865541F4286365550096B746 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865541F3286365550096B746 /* RegistrationView.swift */; };
 		865541F62863656D0096B746 /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865541F52863656D0096B746 /* TaskListView.swift */; };
-		865541FA2863B8A00096B746 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865541F92863B8A00096B746 /* ViewModel.swift */; };
+		865541FA2863B8A00096B746 /* TaskListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865541F92863B8A00096B746 /* TaskListVM.swift */; };
 		865541FD2863B8C40096B746 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865541FC2863B8C40096B746 /* Model.swift */; };
+		865541FF2863BD1A0096B746 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 865541FE2863BD1A0096B746 /* README.md */; };
+		865542012863C1BA0096B746 /* DataFetcherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865542002863C1BA0096B746 /* DataFetcherService.swift */; };
+		86826263286479730055C9F9 /* test_api.postman_collection.json in Resources */ = {isa = PBXBuildFile; fileRef = 86826262286479730055C9F9 /* test_api.postman_collection.json */; };
+		868262672864DD300055C9F9 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868262662864DD300055C9F9 /* NetworkService.swift */; };
+		868262692864DD670055C9F9 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868262682864DD670055C9F9 /* NetworkDataFetcher.swift */; };
+		8682626B2864F2C30055C9F9 /* MainMenuVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8682626A2864F2C30055C9F9 /* MainMenuVM.swift */; };
+		8682626D2864F4290055C9F9 /* RegistrationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8682626C2864F4290055C9F9 /* RegistrationVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,13 +31,18 @@
 		865541E0286354710096B746 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		865541E2286354730096B746 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		865541E5286354730096B746 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		865541ED2863552A0096B746 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		865541EF286355D50096B746 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 		865541F128635B5F0096B746 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		865541F3286365550096B746 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		865541F52863656D0096B746 /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
-		865541F92863B8A00096B746 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		865541F92863B8A00096B746 /* TaskListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListVM.swift; sourceTree = "<group>"; };
 		865541FC2863B8C40096B746 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		865541FE2863BD1A0096B746 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		865542002863C1BA0096B746 /* DataFetcherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcherService.swift; sourceTree = "<group>"; };
+		86826262286479730055C9F9 /* test_api.postman_collection.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test_api.postman_collection.json; sourceTree = "<group>"; };
+		868262662864DD300055C9F9 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		868262682864DD670055C9F9 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
+		8682626A2864F2C30055C9F9 /* MainMenuVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuVM.swift; sourceTree = "<group>"; };
+		8682626C2864F4290055C9F9 /* RegistrationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +59,8 @@
 		865541D2286354710096B746 = {
 			isa = PBXGroup;
 			children = (
+				86826262286479730055C9F9 /* test_api.postman_collection.json */,
+				865541FE2863BD1A0096B746 /* README.md */,
 				865541DD286354710096B746 /* taskList */,
 				865541DC286354710096B746 /* Products */,
 			);
@@ -65,14 +77,14 @@
 		865541DD286354710096B746 /* taskList */ = {
 			isa = PBXGroup;
 			children = (
+				865541DE286354710096B746 /* taskListApp.swift */,
+				865541F128635B5F0096B746 /* Constants.swift */,
 				865541FB2863B8B10096B746 /* Model */,
 				865541F7286365750096B746 /* View */,
 				865541F82863B87D0096B746 /* ViewModel */,
-				865541DE286354710096B746 /* taskListApp.swift */,
 				865541EC2863549F0096B746 /* Networking */,
 				865541E2286354730096B746 /* Assets.xcassets */,
 				865541E4286354730096B746 /* Preview Content */,
-				865541F128635B5F0096B746 /* Constants.swift */,
 			);
 			path = taskList;
 			sourceTree = "<group>";
@@ -88,8 +100,9 @@
 		865541EC2863549F0096B746 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				865541ED2863552A0096B746 /* NetworkService.swift */,
-				865541EF286355D50096B746 /* NetworkDataFetcher.swift */,
+				865542002863C1BA0096B746 /* DataFetcherService.swift */,
+				868262662864DD300055C9F9 /* NetworkService.swift */,
+				868262682864DD670055C9F9 /* NetworkDataFetcher.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -107,7 +120,9 @@
 		865541F82863B87D0096B746 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				865541F92863B8A00096B746 /* ViewModel.swift */,
+				865541F92863B8A00096B746 /* TaskListVM.swift */,
+				8682626A2864F2C30055C9F9 /* MainMenuVM.swift */,
+				8682626C2864F4290055C9F9 /* RegistrationVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -178,6 +193,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86826263286479730055C9F9 /* test_api.postman_collection.json in Resources */,
+				865541FF2863BD1A0096B746 /* README.md in Resources */,
 				865541E6286354730096B746 /* Preview Assets.xcassets in Resources */,
 				865541E3286354730096B746 /* Assets.xcassets in Resources */,
 			);
@@ -190,14 +207,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				868262672864DD300055C9F9 /* NetworkService.swift in Sources */,
 				865541FD2863B8C40096B746 /* Model.swift in Sources */,
 				865541F62863656D0096B746 /* TaskListView.swift in Sources */,
+				868262692864DD670055C9F9 /* NetworkDataFetcher.swift in Sources */,
 				865541F228635B5F0096B746 /* Constants.swift in Sources */,
-				865541F0286355D50096B746 /* NetworkDataFetcher.swift in Sources */,
+				8682626D2864F4290055C9F9 /* RegistrationVM.swift in Sources */,
 				865541E1286354710096B746 /* MainMenuView.swift in Sources */,
+				865542012863C1BA0096B746 /* DataFetcherService.swift in Sources */,
+				8682626B2864F2C30055C9F9 /* MainMenuVM.swift in Sources */,
 				865541F4286365550096B746 /* RegistrationView.swift in Sources */,
-				865541EE2863552A0096B746 /* NetworkService.swift in Sources */,
-				865541FA2863B8A00096B746 /* ViewModel.swift in Sources */,
+				865541FA2863B8A00096B746 /* TaskListVM.swift in Sources */,
 				865541DF286354710096B746 /* taskListApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,9 +353,10 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -363,9 +384,10 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
