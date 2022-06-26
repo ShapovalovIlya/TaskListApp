@@ -10,9 +10,13 @@ import SwiftUI
 struct RegistrationView: View {
     
     @StateObject private var viewModel = RegistrationVM()
+    private let K = Constants()
     
     var body: some View {
         VStack {
+            //Navigation Links
+            NavigationLink(destination: TaskListView(), tag: K.taskListTag, selection: $viewModel.tagSelection)
+            { EmptyView() }
             
             Spacer()
             
@@ -31,7 +35,7 @@ struct RegistrationView: View {
             Spacer()
             
             Button {
-                
+                viewModel.tagSelection = K.taskListTag
             } label: {
                 Text("Registration")
             }

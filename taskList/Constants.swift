@@ -8,7 +8,6 @@
 import Foundation
 
 struct Constants {
-    let postmanUrl = "https://dev1.itpw.ru:8013/"
     let taskListTag = "TaskList"
     let registrationTag = "Registration"
     

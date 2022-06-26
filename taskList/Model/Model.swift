@@ -7,11 +7,6 @@
 
 import Foundation
 
-struct TaskList: Codable, Identifiable {
-    let id = UUID()
-    var detail: String
-}
-
 // Test data struct
 struct Post: Codable, Identifiable, Hashable {
     let id = UUID()

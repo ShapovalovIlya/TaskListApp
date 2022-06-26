@@ -2,6 +2,11 @@
 
 
 Разработать простое приложение списка задач с графическим интерфейсом и подключением к серверу API.
+Стек технологий:
+- Swift
+- SwiftUI
+- MVP
+- Rest API (GET, POST, PUT, PATCH, DELETE)
 
 Функционал приложения:
 1.	Регистрация — dev1.itpw.ru:8013/accounts/authentication/reg/ (POST)

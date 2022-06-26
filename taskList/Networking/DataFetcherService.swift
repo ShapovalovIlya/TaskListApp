@@ -17,12 +17,12 @@ class DataFetcherService {
         self.dataFetcher = dataFetcher
     }
     
-    
+    // Test get-request
     func getPosts(complition: @escaping ([Post]?) -> Void) {
          let url = jsonplaceholderURL
         dataFetcher.fetchGenericJSONData(urlString: url, response: complition)
-        
     }
+    
     
 }
 

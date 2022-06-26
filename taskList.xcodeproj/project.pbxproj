@@ -23,6 +23,8 @@
 		868262692864DD670055C9F9 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868262682864DD670055C9F9 /* NetworkDataFetcher.swift */; };
 		8682626B2864F2C30055C9F9 /* MainMenuVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8682626A2864F2C30055C9F9 /* MainMenuVM.swift */; };
 		8682626D2864F4290055C9F9 /* RegistrationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8682626C2864F4290055C9F9 /* RegistrationVM.swift */; };
+		86C3D45D286703C5000993C9 /* TaskListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C3D45C286703C5000993C9 /* TaskListModel.swift */; };
+		86C3D45F286704EE000993C9 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C3D45E286704EE000993C9 /* TaskModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		868262682864DD670055C9F9 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 		8682626A2864F2C30055C9F9 /* MainMenuVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuVM.swift; sourceTree = "<group>"; };
 		8682626C2864F4290055C9F9 /* RegistrationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVM.swift; sourceTree = "<group>"; };
+		86C3D45C286703C5000993C9 /* TaskListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListModel.swift; sourceTree = "<group>"; };
+		86C3D45E286704EE000993C9 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +135,8 @@
 			isa = PBXGroup;
 			children = (
 				865541FC2863B8C40096B746 /* Model.swift */,
+				86C3D45C286703C5000993C9 /* TaskListModel.swift */,
+				86C3D45E286704EE000993C9 /* TaskModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -212,6 +218,8 @@
 				865541F62863656D0096B746 /* TaskListView.swift in Sources */,
 				868262692864DD670055C9F9 /* NetworkDataFetcher.swift in Sources */,
 				865541F228635B5F0096B746 /* Constants.swift in Sources */,
+				86C3D45D286703C5000993C9 /* TaskListModel.swift in Sources */,
+				86C3D45F286704EE000993C9 /* TaskModel.swift in Sources */,
 				8682626D2864F4290055C9F9 /* RegistrationVM.swift in Sources */,
 				865541E1286354710096B746 /* MainMenuView.swift in Sources */,
 				865542012863C1BA0096B746 /* DataFetcherService.swift in Sources */,

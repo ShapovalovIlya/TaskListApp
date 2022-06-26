@@ -12,5 +12,6 @@ extension RegistrationView {
         @Published var username: String = ""
         @Published var password: String = ""
         @Published var confirmPassword: String = ""
+        @Published var tagSelection: String? = nil
     }
 }
